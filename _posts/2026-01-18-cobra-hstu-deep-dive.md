@@ -10,8 +10,6 @@ tags:
   - 推荐系统
 toc: true  # 开启右侧文章目录
 toc_sticky: true # 目录随页面滚动
-header:
-  og_image: /images/posts/placeholder_cobra.png
 excerpt: "在 HSTU 中探索 COBRA 架构，实现语义 ID (SID) 和向量 ID (VID) 的交错式生成。"
 ---
 
@@ -174,6 +172,9 @@ def fit(self, X):
 > **实证效果 (ML-20M)**：使用 Balanced K-Means 后，第 3 层的归一化标记熵从 ~0.8+ 提高到 ~0.99+；前缀冲突率从 ~10% 下降到 ~6%。这是一个巨大的进步。
 {: .notice--warning} 
 
+![SID 评估结果](/images/posts/评估sid.png 
+*图 1. SID 评估结果。* 
+
 ---
 
 ## 3 COBRA 复现：序列交错与相对时间偏执
@@ -319,4 +320,5 @@ self.register_buffer(
 对于拥有海量算力（大 Batch）和富媒体内容（强内容信号）的场景，COBRA 架构依然极具潜力。而对于传统的协同过滤主导的数据集，Shao 的结论依然成立：有时候，简单的 ID 就是最好的。
 
 感谢阅读！如果您对代码细节感兴趣，欢迎查看仓库中的 `sidvid_loss.py` 和 `embedding_modules.py`。
+
 
